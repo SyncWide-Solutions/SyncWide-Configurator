@@ -2,8 +2,6 @@
 
 SyncWide Configurator easily configers Your Server to your needs!
 
----
-
 ## Features
 - Webserver
 -   Apache
@@ -20,13 +18,9 @@ SyncWide Configurator easily configers Your Server to your needs!
 -   PostgreSQL
 -   SQLite
 
----
-
 ## OS
 This Software is Ubuntu/Debian only!
 This Software requires SuperUser (sudo) permissions.
-
----
 
 This code is under the MIT License.
 Please do not republish without the consent of @LolgamerHD
