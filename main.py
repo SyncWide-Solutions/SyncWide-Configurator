@@ -12,21 +12,6 @@ RESET = "\033[0m"
 BOLD = "\033[1m"
 UNDERLINE = "\033[4m"
 
-# Web Server
-#   Apache (recommended)
-#   Nginx
-#
-# Programming Languages
-#   Python
-#   NodeJS
-#   PHP
-#
-# Databases
-#   MySQL
-#   MongoDB
-#   PostgreSQL
-#   SQLite
-
 def start():
     start_choise = input(f"{YELLOW}What do you want to install?{RESET}\r\n{RED}[1]{RESET} Web Server\r\n{RED}[2]{RESET} Programming Languages\r\n{RED}[3]{RESET} Databases (Comming Soon!)\r\n{RED}[4]{RESET} Exit\r\n")
 
