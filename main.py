@@ -42,5 +42,30 @@ def start():
         print(f"{RED}Invalid choise!{RESET}")
         start()
 
+def header():
+        print("""
+.oooooo..o                                   oooooo   oooooo     oooo  o8o        .o8                                
+d8P'    `Y8                                    `888.    `888.     .8'   `"'       "888                                
+Y88bo.      oooo    ooo ooo. .oo.    .ooooo.    `888.   .8888.   .8'   oooo   .oooo888   .ooooo.                      
+ `"Y8888o.   `88.  .8'  `888P"Y88b  d88' `"Y8    `888  .8'`888. .8'    `888  d88' `888  d88' `88b                     
+     `"Y88b   `88..8'    888   888  888           `888.8'  `888.8'      888  888   888  888ooo888                     
+oo     .d8P    `888'     888   888  888   .o8      `888'    `888'       888  888   888  888    .o                     
+8""88888P'      .8'     o888o o888o `Y8bod8P'       `8'      `8'       o888o `Y8bod88P" `Y8bod8P'                     
+            .o..P'                                                                                                    
+            `Y8P'                                                                                                     
+                                                                                                                      
+  .oooooo.                          .o88o.  o8o                                                .                      
+ d8P'  `Y8b                         888 `"  `"'                                              .o8                      
+888           .ooooo.  ooo. .oo.   o888oo  oooo   .oooooooo oooo  oooo  oooo d8b  .oooo.   .o888oo  .ooooo.  oooo d8b 
+888          d88' `88b `888P"Y88b   888    `888  888' `88b  `888  `888  `888""8P `P  )88b    888   d88' `88b `888""8P 
+888          888   888  888   888   888     888  888   888   888   888   888      .oP"888    888   888   888  888     
+`88b    ooo  888   888  888   888   888     888  `88bod8P'   888   888   888     d8(  888    888 . 888   888  888     
+ `Y8bood8P'  `Y8bod8P' o888o o888o o888o   o888o `8oooooo.   `V88V"V8P' d888b    `Y888""8o   "888" `Y8bod8P' d888b    
+                                                 d"     YD                                                            
+                                                 "Y88888P'                                                            
+                                                                                                                      
+""")
+        start()
+
 if __name__ == "__main__":
-    start()
+    header()
