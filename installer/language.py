@@ -13,19 +13,22 @@ BOLD = "\033[1m"
 UNDERLINE = "\033[4m"
 
 def python(os):
-    print(f"{YELLOW}Installing Python...{RESET}")
-    os.system("sudo apt-get install python3 -y")
-    print(f"{GREEN}Python installed successfully!{RESET}")
+    if os == "linux":
+        print(f"{YELLOW}Installing Python...{RESET}")
+        os.system("sudo apt-get install python3 -y")
+        print(f"{GREEN}Python installed successfully!{RESET}")
 
 def nodejs(os):
-    print(f"{YELLOW}Installing NodeJS...{RESET}")
-    os.system("sudo apt-get install nodejs -y")
-    print(f"{GREEN}NodeJS installed successfully!{RESET}")
+    if os == "linux":
+        print(f"{YELLOW}Installing NodeJS...{RESET}")
+        os.system("sudo apt-get install nodejs -y")
+        print(f"{GREEN}NodeJS installed successfully!{RESET}")
 
 def php(os):
-    print(f"{YELLOW}Installing PHP...{RESET}")
-    os.system("sudo apt-get install php -y")
-    print(f"{GREEN}PHP installed successfully!{RESET}")
+    if os == "linux":
+        print(f"{YELLOW}Installing PHP...{RESET}")
+        os.system("sudo apt-get install php -y")
+        print(f"{GREEN}PHP installed successfully!{RESET}")
 
 def install(os):
     what_programming_language = input(f"{YELLOW}Witch Programming Language do you want to install?{RESET}\r\n{RED}[1]{RESET} Python\r\n{RED}[2]{RESET} NodeJS\r\n{RED}[3]{RESET} PHP\r\n{RED}[4]{RESET} Exit\r\n")

@@ -13,4 +13,5 @@ BOLD = "\033[1m"
 UNDERLINE = "\033[4m"
 
 def install(os):
-    print(f"{YELLOW}Comming Soon!{RESET}")
+    if os == "linux":
+        print(f"{YELLOW}Comming Soon!{RESET}")
