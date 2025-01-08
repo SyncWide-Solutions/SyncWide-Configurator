@@ -1,4 +1,5 @@
 from installer import language, webserver, database
+import os
 
 RED = "\033[31m"
 GREEN = "\033[32m"
@@ -12,20 +13,20 @@ RESET = "\033[0m"
 BOLD = "\033[1m"
 UNDERLINE = "\033[4m"
 
-def start():
+def linux():
     start_choise = input(f"{YELLOW}What do you want to install?{RESET}\r\n{RED}[1]{RESET} Web Server\r\n{RED}[2]{RESET} Programming Languages\r\n{RED}[3]{RESET} Databases (Comming Soon!)\r\n{RED}[4]{RESET} Exit\r\n")
 
     if start_choise == "1":
-        webserver.install()
+        webserver.install("linux")
     elif start_choise == "2":
-        language.install()
+        language.install("linux")
     elif start_choise == "3":
-        database.install()
+        database.install("linux")
     elif start_choise == "4":
         exit()
     else:
         print(f"{RED}Invalid choise!{RESET}")
-        start()
+        linux()
 
 def header():
         print("""
@@ -50,7 +51,18 @@ oo     .d8P    `888'     888   888  888   .o8      `888'    `888'       888  888
                                                  "Y88888P'                                                            
                                                                                                                       
 """)
-        start()
+        what_os = input(f"{YELLOW}What OS do you use?{RESET}\r\n{RED}[1]{RESET} Linux\r\n{RED}[2]{RESET} Windows\r\n{RED}[3]{RESET} Mac\r\n{RED}[4]{RESET} Exit\r\n")
+        if what_os == "1":
+            linux()
+        elif what_os == "2":
+            print(f"{RED}Windows is not supported yet!{RESET}")
+        elif what_os == "3":
+            print(f"{RED}Mac is not supported yet!{RESET}")
+        elif what_os == "4":
+            exit()
+        else:
+            print(f"{RED}Invalid choise!{RESET}")
+            header()
 
 if __name__ == "__main__":
     header()
