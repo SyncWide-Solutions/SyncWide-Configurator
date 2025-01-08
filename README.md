@@ -3,20 +3,15 @@
 SyncWide Configurator easily configers Your Server to your needs!
 
 ## Features
-- Webserver
--   Apache
--   Nginx
-
-- Programming Languages
--   Python
--   NodeJS
--   PHP
-
-- Databases (Comming soon!)
--   MySQL
--   MongoDB
--   PostgreSQL
--   SQLite
+- Apache
+- Nginx
+- Python
+- NodeJS
+- PHP
+- MySQL
+- MongoDB
+- PostgreSQL
+- SQLite
 
 ## OS
 This Software is Ubuntu/Debian only!
