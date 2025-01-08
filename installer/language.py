@@ -12,33 +12,33 @@ RESET = "\033[0m"
 BOLD = "\033[1m"
 UNDERLINE = "\033[4m"
 
-def python(os):
-    if os == "linux":
+def python(ops):
+    if ops == "linux":
         print(f"{YELLOW}Installing Python...{RESET}")
         os.system("sudo apt-get install python3 -y")
         print(f"{GREEN}Python installed successfully!{RESET}")
 
-def nodejs(os):
-    if os == "linux":
+def nodejs(ops):
+    if ops == "linux":
         print(f"{YELLOW}Installing NodeJS...{RESET}")
         os.system("sudo apt-get install nodejs -y")
         print(f"{GREEN}NodeJS installed successfully!{RESET}")
 
-def php(os):
-    if os == "linux":
+def php(ops):
+    if ops == "linux":
         print(f"{YELLOW}Installing PHP...{RESET}")
         os.system("sudo apt-get install php -y")
         print(f"{GREEN}PHP installed successfully!{RESET}")
 
-def install(os):
+def install(ops):
     what_programming_language = input(f"{YELLOW}Witch Programming Language do you want to install?{RESET}\r\n{RED}[1]{RESET} Python\r\n{RED}[2]{RESET} NodeJS\r\n{RED}[3]{RESET} PHP\r\n{RED}[4]{RESET} Exit\r\n")
 
     if what_programming_language == "1":
-        python(os)
+        python(ops)
     elif what_programming_language == "2":
-        nodejs(os)
+        nodejs(ops)
     elif what_programming_language == "3":
-        php(os)
+        php(ops)
     elif what_programming_language == "4":
         exit()
     else:
