@@ -40,7 +40,7 @@ This software is designed exclusively for:
 
 This project is licensed under the **MIT License**, allowing you to use, modify, and distribute the software freely.  
 
-> 💡 **Note**: Republishing this code without the consent of **[@LolgamerHD](https://github.com/LolgamerHD)** is not permitted.  
+> 💡 **Note**: Republishing this code without the consent of **[@LolgamerHD](https://github.com/LolgamerHDDE)** is not permitted.  
 
 ---
 
