@@ -31,6 +31,7 @@ This software is designed exclusively for:
 
 - **Ubuntu**  
 - **Debian**  
+- **Windows 10/11**
 
 > ⚠️ **Important**: This software requires superuser privileges (`sudo`) to function.  
 
