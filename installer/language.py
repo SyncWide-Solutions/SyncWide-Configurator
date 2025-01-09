@@ -72,6 +72,7 @@ def php(ops):
             
         os.system("del php.zip")
         print(f"{GREEN}PHP installed successfully!{RESET}")
+        
 def install(ops):
     what_programming_language = input(f"{YELLOW}What Programming Language do you want to install?{RESET}\r\n{RED}[1]{RESET} Python\r\n{RED}[2]{RESET} NodeJS\r\n{RED}[3]{RESET} PHP\r\n{RED}[4]{RESET} Exit\r\n")
 
