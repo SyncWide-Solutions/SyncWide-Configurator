@@ -46,6 +46,8 @@ def apache(ops):
             print(f"{GREEN}Apache2 installed successfully!{RESET}")
         except Exception as e:
             print(f"{RED}Error whilest installing Apache2{RESET}")
+    elif ops == "windows":
+        print(f"{YELLOW}Comming Soon!{RESET}")
 
 def nginx(ops):
     if ops == "linux":
@@ -81,6 +83,8 @@ def nginx(ops):
             print(f"{GREEN}Nginx installed successfully!{RESET}")
         except Exception as e:
             print(f"{RED}Error whilest installing Nginx{RESET}")
+    elif ops == "windows":
+            print(f"{YELLOW}Comming Soon!{RESET}")
 
 def install(ops):
     what_web_server = input(f"{YELLOW}Witch Web Server do you want to install?{RESET}\r\n{RED}[1]{RESET} Apache2 (recommended)\r\n{RED}[2]{RESET} Nginx\r\n{RED}[3]{RESET} Exit\r\n")

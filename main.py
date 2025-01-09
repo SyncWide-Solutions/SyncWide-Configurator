@@ -13,6 +13,21 @@ RESET = "\033[0m"
 BOLD = "\033[1m"
 UNDERLINE = "\033[4m"
 
+def windows():
+    start_choise = input(f"{YELLOW}What do you want to install?{RESET}\r\n{RED}[1]{RESET} Web Server\r\n{RED}[2]{RESET} Programming Languages\r\n{RED}[3]{RESET} Databases (Comming Soon!)\r\n{RED}[4]{RESET} Exit\r\n")
+
+    if start_choise == "1":
+        webserver.install("windows")
+    elif start_choise == "2":
+        language.install("windows")
+    elif start_choise == "3":
+        database.install("windows")
+    elif start_choise == "4":
+        exit()
+    else:
+        print(f"{RED}Invalid choise!{RESET}")
+        windows()
+
 def linux():
     start_choise = input(f"{YELLOW}What do you want to install?{RESET}\r\n{RED}[1]{RESET} Web Server\r\n{RED}[2]{RESET} Programming Languages\r\n{RED}[3]{RESET} Databases (Comming Soon!)\r\n{RED}[4]{RESET} Exit\r\n")
 

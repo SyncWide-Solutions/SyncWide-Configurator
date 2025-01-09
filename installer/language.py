@@ -17,18 +17,24 @@ def python(ops):
         print(f"{YELLOW}Installing Python...{RESET}")
         os.system("sudo apt-get install python3 -y")
         print(f"{GREEN}Python installed successfully!{RESET}")
+    elif ops == "windows":
+        print(f"{YELLOW}Comming Soon!{RESET}")
 
 def nodejs(ops):
     if ops == "linux":
         print(f"{YELLOW}Installing NodeJS...{RESET}")
         os.system("sudo apt-get install nodejs -y")
         print(f"{GREEN}NodeJS installed successfully!{RESET}")
+    elif ops == "windows":
+        print(f"{YELLOW}Comming Soon!{RESET}")
 
 def php(ops):
     if ops == "linux":
         print(f"{YELLOW}Installing PHP...{RESET}")
         os.system("sudo apt-get install php -y")
         print(f"{GREEN}PHP installed successfully!{RESET}")
+    elif ops == "windows":
+        print(f"{YELLOW}Comming Soon!{RESET}")
 
 def install(ops):
     what_programming_language = input(f"{YELLOW}Witch Programming Language do you want to install?{RESET}\r\n{RED}[1]{RESET} Python\r\n{RED}[2]{RESET} NodeJS\r\n{RED}[3]{RESET} PHP\r\n{RED}[4]{RESET} Exit\r\n")

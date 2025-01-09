@@ -12,6 +12,8 @@ RESET = "\033[0m"
 BOLD = "\033[1m"
 UNDERLINE = "\033[4m"
 
-def install(os):
-    if os == "linux":
+def install(ops):
+    if ops == "linux":
+        print(f"{YELLOW}Comming Soon!{RESET}")
+    elif ops == "windows":
         print(f"{YELLOW}Comming Soon!{RESET}")
