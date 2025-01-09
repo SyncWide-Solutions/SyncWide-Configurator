@@ -18,7 +18,9 @@ def python(ops):
         os.system("sudo apt-get install python3 -y")
         print(f"{GREEN}Python installed successfully!{RESET}")
     elif ops == "windows":
-        print(f"{YELLOW}Comming Soon!{RESET}")
+        print(f"{YELLOW}Installing Python...{RESET}")
+        os.system("winget install -e --id Python.Python.3.11")
+        print(f"{GREEN}Python installed successfully!{RESET}")
 
 def nodejs(ops):
     if ops == "linux":
@@ -26,7 +28,9 @@ def nodejs(ops):
         os.system("sudo apt-get install nodejs -y")
         print(f"{GREEN}NodeJS installed successfully!{RESET}")
     elif ops == "windows":
-        print(f"{YELLOW}Comming Soon!{RESET}")
+        print(f"{YELLOW}Installing NodeJS...{RESET}")
+        os.system("winget install -e --id OpenJS.NodeJS")
+        print(f"{GREEN}NodeJS installed successfully!{RESET}")
 
 def php(ops):
     if ops == "linux":
@@ -34,7 +38,7 @@ def php(ops):
         os.system("sudo apt-get install php -y")
         print(f"{GREEN}PHP installed successfully!{RESET}")
     elif ops == "windows":
-        print(f"{YELLOW}Comming Soon!{RESET}")
+        print(f"{RED}Comming in V1.1!{RESET}")
 
 def install(ops):
     what_programming_language = input(f"{YELLOW}Witch Programming Language do you want to install?{RESET}\r\n{RED}[1]{RESET} Python\r\n{RED}[2]{RESET} NodeJS\r\n{RED}[3]{RESET} PHP\r\n{RED}[4]{RESET} Exit\r\n")

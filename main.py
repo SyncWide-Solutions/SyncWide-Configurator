@@ -17,7 +17,7 @@ def windows():
     start_choise = input(f"{YELLOW}What do you want to install?{RESET}\r\n{RED}[1]{RESET} Web Server\r\n{RED}[2]{RESET} Programming Languages\r\n{RED}[3]{RESET} Databases (Comming Soon!)\r\n{RED}[4]{RESET} Exit\r\n")
 
     if start_choise == "1":
-        webserver.install("windows")
+        print(f"{RED}Comming in V1.1!{RESET}")
     elif start_choise == "2":
         language.install("windows")
     elif start_choise == "3":
@@ -70,7 +70,7 @@ oo     .d8P    `888'     888   888  888   .o8      `888'    `888'       888  888
         if what_os == "1":
             linux()
         elif what_os == "2":
-            print(f"{RED}Windows is not supported yet!{RESET}")
+            windows()
         elif what_os == "3":
             print(f"{RED}Mac is not supported yet!{RESET}")
         elif what_os == "4":
