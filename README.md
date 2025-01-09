@@ -9,8 +9,9 @@
 SyncWide Configurator supports the following tools and technologies:  
 
 - **Web Servers**:  
-  - Apache  
-  - Nginx  
+  - Apache (Linux Only) 
+  - Nginx  (Linux Only)
+  - XAMPP (Windows Only)
 
 - **Programming Environments**:  
   - Python  
