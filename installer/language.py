@@ -19,26 +19,31 @@ def python(ops):
         print(f"{YELLOW}Installing Python...{RESET}")
         os.system("sudo apt-get install python3 -y")
         print(f"{GREEN}Python installed successfully!{RESET}")
+        return 0
     elif ops == "windows":
         print(f"{YELLOW}Installing Python...{RESET}")
         os.system("winget install -e --id Python.Python.3.11")
         print(f"{GREEN}Python installed successfully!{RESET}")
+        return 0
 
 def nodejs(ops):
     if ops == "linux":
         print(f"{YELLOW}Installing NodeJS...{RESET}")
         os.system("sudo apt-get install nodejs -y")
         print(f"{GREEN}NodeJS installed successfully!{RESET}")
+        return 0
     elif ops == "windows":
         print(f"{YELLOW}Installing NodeJS...{RESET}")
         os.system("winget install -e --id OpenJS.NodeJS")
         print(f"{GREEN}NodeJS installed successfully!{RESET}")
+        return 0
 
 def php(ops):
     if ops == "linux":
         print(f"{YELLOW}Installing PHP...{RESET}")
         os.system("sudo apt-get install php -y")
         print(f"{GREEN}PHP installed successfully!{RESET}")
+        return 0
     if ops == "windows":
         try:
             print(f"{GREEN}Downloading PHP...{RESET}")
@@ -65,13 +70,14 @@ def php(ops):
                     zip_ref.extractall("C:/php")
             except Exception as e:
                 print(f"{RED}Error while unzipping PHP: {str(e)}{RESET}")
-                return
+                return 1
         except Exception as e:
             print(f"{RED}Error while downloading PHP: {str(e)}{RESET}")
-            return
+            return 1
             
         os.system("del php.zip")
         print(f"{GREEN}PHP installed successfully!{RESET}")
+        return 0
         
 def install(ops):
     what_programming_language = input(f"{YELLOW}What Programming Language do you want to install?{RESET}\r\n{RED}[1]{RESET} Python\r\n{RED}[2]{RESET} NodeJS\r\n{RED}[3]{RESET} PHP\r\n{RED}[4]{RESET} Exit\r\n")

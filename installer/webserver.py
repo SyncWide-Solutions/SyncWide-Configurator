@@ -44,8 +44,10 @@ def apache(ops):
     </html>
     """)
             print(f"{GREEN}Apache2 installed successfully!{RESET}")
+            return 0
         except Exception as e:
             print(f"{RED}Error whilest installing Apache2{RESET}")
+            return 1
 
 def nginx(ops):
     if ops == "linux":
@@ -79,8 +81,10 @@ def nginx(ops):
     </html>
     """)
             print(f"{GREEN}Nginx installed successfully!{RESET}")
+            return 0
         except Exception as e:
             print(f"{RED}Error whilest installing Nginx{RESET}")
+            return 1
 
 def xampp():
     print(f"{YELLOW}Installing XAMPP...{RESET}")
@@ -111,8 +115,11 @@ def xampp():
         </footer>
     </body>
     </html>""")
+            print(f"{GREEN}XAMPP installed successfully!{RESET}")
+            return 0
     except Exception as e:
         print(f"{RED}Error whilest installing XAMPP{RESET}")
+        return 1
 
 def install(ops):
     if ops == "linux":
