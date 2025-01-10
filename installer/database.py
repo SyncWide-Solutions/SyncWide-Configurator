@@ -34,6 +34,10 @@ def install(ops):
         print(f"{YELLOW}Installing Apache...{RESET}")
         os.system("sudo apt-get install apache2 -y")
 
+        print(f"{YELLOW}Changing Apache to port 3306...{RESET}")
+        os.system("sudo sed -i 's/80/3306/' /etc/apache2/ports.conf")
+        os.system("sudo sed -i 's/80/3306/' /etc/apache2/sites-available/000-default.conf")
+
         print(f"{YELLOW}Starting Apache...{RESET}")
         os.system("sudo systemctl start apache2")
         os.system("sudo systemctl enable apache2")
@@ -43,6 +47,10 @@ def install(ops):
 
         print(f"{YELLOW}Restarting Apache...{RESET}")
         os.system("sudo systemctl restart apache2")
+
+        print(f"{YELLOW}Configuring firewall to allow TCP and UDP traffic on port 3306...{RESET}")
+        os.system("sudo ufw allow 3306/tcp")
+        os.system("sudo ufw allow 3306/udp")
 
         print(f"{GREEN}MySQL installed successfully!{RESET}")
         print(f"{GREEN}MySQL username: root{RESET}")
