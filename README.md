@@ -39,6 +39,15 @@ This software is designed exclusively for:
 
 ---
 
+## 🖥️ Web Installer  
+
+This Software has a Web Installer:  
+You can run it via the web-setup file located in the releases.  
+
+> 💡 **Note**: Please view the Code at the end of the installation (0: Success, 1: Error)
+
+---
+
 ## 📝 License  
 
 This project is licensed under the **MIT License**, allowing you to use, modify, and distribute the software freely.  
