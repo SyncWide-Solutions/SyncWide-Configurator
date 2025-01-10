@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Programming Language - SyncWide Configurator</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Select Programming Language</h1>
+        <form action="/install" method="GET">
+            <input type="hidden" name="os_type" value="{{ request.query_params.os_type }}">
+            <input type="hidden" name="install_type" value="language">
+            
+            <div class="language-options">
+                {% for lang in languages %}
+                <div class="language-option">
+                    <input type="radio" name="selected_language" value="{{ lang }}" id="{{ lang }}">
+                    <label for="{{ lang }}">{{ lang }}</label>
+                </div>
+                {% endfor %}
+            </div>
+
+            <button type="submit">Install Selected Language</button>
+        </form>
+    </div>
+</body>
+</html>

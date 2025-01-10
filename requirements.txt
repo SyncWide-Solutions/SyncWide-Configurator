@@ -3,3 +3,4 @@ FastAPI
 jinja2
 python-multipart
 uvicorn
+dotenv

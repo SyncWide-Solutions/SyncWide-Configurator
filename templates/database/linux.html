@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linux Databases - SyncWide</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Install Databases on Linux</h1>
+        <form action="/install/database/linux" method="GET">
+            <div class="database-options">
+                <div class="database-item">
+                    <input type="radio" id="mysql" name="install_service" value="mysql">
+                    <label for="mysql">MySQL</label>
+                </div>
+                <div class="database-item">
+                    <input type="radio" id="postgresql" name="install_service" value="postgresql">
+                    <label for="postgresql">PostgreSQL</label>
+                </div>
+                <div class="database-item">
+                    <input type="radio" id="mongodb" name="install_service" value="mongodb">
+                    <label for="mongodb">MongoDB</label>
+                </div>
+            </div>
+            <button type="submit">Install Selected Database</button>
+        </form>
+    </div>
+</body>
+</html>

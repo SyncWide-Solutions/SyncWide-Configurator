@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Windows Programming Languages - SyncWide</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Install Programming Languages on Windows</h1>
+        <form action="/install/language/windows" method="GET">
+            <div class="language-options">
+                <div class="language-item">
+                    <input type="checkbox" id="python" name="install_service" value="python">
+                    <label for="python">Python</label>
+                </div>
+                <div class="language-item">
+                    <input type="checkbox" id="nodejs" name="install_service" value="nodejs">
+                    <label for="nodejs">Node.js</label>
+                </div>
+                <div class="language-item">
+                    <input type="checkbox" id="php" name="install_service" value="php">
+                    <label for="php">PHP</label>
+                </div>
+            </div>
+            <button type="submit">Install Selected Languages</button>
+        </form>
+    </div>
+</body>
+</html>

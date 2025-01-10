@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Windows Web Servers - SyncWide</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Install Web Servers on Windows</h1>
+        <form action="/install/webserver/windows" method="GET">
+            <div class="server-options">
+                <div class="server-item">
+                    <input type="radio" id="apache" name="install_service" value="apache">
+                    <label for="apache">XAMPP</label>
+                </div>
+            </div>
+            <button type="submit">Install Selected Server</button>
+        </form>
+    </div>
+</body>
+</html>

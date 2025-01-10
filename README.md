@@ -35,6 +35,7 @@ This software is designed exclusively for:
 - **Windows 10/11**
 
 > ⚠️ **Important**: This software requires superuser privileges (`sudo`) to function. (For Windows: Administrator privileges are required.)  
+> 💡 **Note**: The Websetup has sill a few Bugs
 
 ---
 
