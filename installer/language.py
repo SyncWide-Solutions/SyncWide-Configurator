@@ -124,6 +124,7 @@ def php(ops):
             except Exception as e:
                 print(f"{RED}Error while unzipping PHP: {str(e)}{RESET}")
                 return 1
+            os.system('setx PATH "%PATH%;C:/php"')
 
         except Exception as e:
             print(f"{RED}Error during installation: {str(e)}{RESET}")
