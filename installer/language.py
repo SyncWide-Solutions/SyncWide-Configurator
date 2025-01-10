@@ -109,14 +109,14 @@ def php(ops):
             url = "https://windows.php.net/downloads/releases/php-8.4.2-nts-Win32-vs17-x86.zip"
             output_file = "php.zip"
             
-            print(f"{GREEN}Downloading PHP with parallel downloader and progress bar...{RESET}")
+            print(f"{GREEN}Downloading PHP{RESET}")
             if not parallel_download_with_progress(url, output_file, num_threads=4):
                 print(f"{RED}Failed to download PHP!{RESET}")
                 return 1
 
             print(f"{GREEN}Making PHP Directory...{RESET}")
             os.system("mkdir C:/php")
-
+ 
             print(f"{GREEN}Unzipping The PHP File...{RESET}")
             try:
                 with zipfile.ZipFile(output_file, "r") as zip_ref:
