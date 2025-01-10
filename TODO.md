@@ -3,4 +3,4 @@
 - Command line Arguments
 - Better Web Server Config
 - Databases
-- GUI
+- Fix GUI Bugs
