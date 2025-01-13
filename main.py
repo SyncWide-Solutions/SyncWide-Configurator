@@ -1,4 +1,5 @@
 from installer import language, webserver, database
+import platform
 import os
 
 RED = "\033[31m"
@@ -43,8 +44,72 @@ def linux():
         print(f"{RED}Invalid choise!{RESET}")
         linux()
 
-def header():
-        print("""
+class ConfigProcessor:
+    def __init__(self):
+        self.debug_mode = False
+        self.os_type = None
+        
+    def set_os_type(self, what_os):
+        os_map = {
+            "Windows": "windows",
+            "Linux": "linux"
+        }
+        
+        if what_os not in os_map:
+            print(f"{RED}Your OS is not supported!{RESET}")
+            exit()
+            
+        self.os_type = os_map[what_os]
+        
+    def process_line(self, line_content, database, webserver, language):
+        parts = line_content.split()
+        if len(parts) != 2:
+            return False
+            
+        component, choice = parts
+        
+        if component == "debug" and choice.lower() == "true":
+            self.debug_mode = True
+            return True
+            
+        if component == "language":
+            language_map = {
+                "python": language.debug.python if self.debug_mode else language.python,
+                "nodejs": language.debug.nodejs if self.debug_mode else language.nodejs,
+                "php": language.debug.php if self.debug_mode else language.php
+            }
+            if choice.lower() in language_map:
+                language_map[choice.lower()](self.os_type)
+                return True
+                
+        elif component == "webserver":
+            if self.os_type == "windows":
+                if choice.lower() == "xampp":
+                    if self.debug_mode:
+                        webserver.debug.xampp()
+                    else:
+                        webserver.xampp()
+                    return True
+            elif self.os_type == "linux":
+                webserver_map = {
+                    "apache": webserver.debug.apache if self.debug_mode else webserver.apache,
+                    "nginx": webserver.debug.nginx if self.debug_mode else webserver.nginx
+                }
+                if choice.lower() in webserver_map:
+                    webserver_map[choice.lower()](self.os_type)
+                    return True
+                
+        elif component == "database":
+            if self.debug_mode:
+                database.debug.install(self.os_type)
+            else:
+                database.install(self.os_type)
+            return True
+            
+        return False
+
+def main():
+    print("""
 .oooooo..o                                   oooooo   oooooo     oooo  o8o        .o8                                
 d8P'    `Y8                                    `888.    `888.     .8'   `"'       "888                                
 Y88bo.      oooo    ooo ooo. .oo.    .ooooo.    `888.   .8888.   .8'   oooo   .oooo888   .ooooo.                      
@@ -66,18 +131,39 @@ oo     .d8P    `888'     888   888  888   .o8      `888'    `888'       888  888
                                                  "Y88888P'                                                            
                                                                                                                       
 """)
-        what_os = input(f"{YELLOW}What OS do you use?{RESET}\r\n{RED}[1]{RESET} Linux\r\n{RED}[2]{RESET} Windows\r\n{RED}[3]{RESET} Mac\r\n{RED}[4]{RESET} Exit\r\n")
-        if what_os == "1":
-            linux()
-        elif what_os == "2":
-            windows()
-        elif what_os == "3":
-            print(f"{RED}Mac is not supported yet!{RESET}")
-        elif what_os == "4":
+    config_processor = ConfigProcessor()
+    config_processor.set_os_type(platform.system())
+    print(f"{MAGENTA}Operating System: {platform.system}{RESET}\n")
+
+    have_file = input(f"{YELLOW}Do you have a .syncwide config file?{RESET}\r\n{RED}[1]{RESET} Yes\r\n{RED}[2]{RESET} No\r\n")
+
+    if have_file == "1":
+        where_file = input(f"{YELLOW}What is the path to your .syncwide config file?{RESET}\r\n")
+        
+        try:
+            with open(where_file, "r") as file:
+                print(f"{GREEN}Config file found!{RESET}")
+                print(f"{YELLOW}Trying to read the config file...{RESET}")
+                for line in file:
+                    line = line.strip()
+                    print(line)
+                    valid_config = config_processor.process_line(line, database, webserver, language) 
+        except Exception as e:
+            print(f"{RED}Error reading the config file: {e}{RESET}")
             exit()
+            
+    elif have_file == "2":
+        if platform.system() == "Windows":
+            windows()
+        elif platform.system() == "Linux":
+            linux()
         else:
-            print(f"{RED}Invalid choise!{RESET}")
-            header()
+            print(f"{RED}Your OS is not supported!{RESET}")
+            exit()
+    else:
+        print(f"{RED}Invalid choice!{RESET}")
+        exit()
+
 
 if __name__ == "__main__":
-    header()
+    main()
