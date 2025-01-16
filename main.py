@@ -18,7 +18,7 @@ def windows():
     start_choise = input(f"{YELLOW}What do you want to install?{RESET}\r\n{RED}[1]{RESET} Web Server\r\n{RED}[2]{RESET} Programming Languages\r\n{RED}[3]{RESET} Databases (Comming Soon!)\r\n{RED}[4]{RESET} Exit\r\n")
 
     if start_choise == "1":
-        print(f"{RED}Comming in V1.1!{RESET}")
+        webserver.install("windows")
     elif start_choise == "2":
         language.install("windows")
     elif start_choise == "3":
